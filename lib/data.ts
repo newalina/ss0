@@ -97,6 +97,10 @@ export const products: Product[] = [
   },
 ];
 
+export function getProductById(id: string) {
+  return products.find((product) => product.id === id);
+}
+
 export function getMainImage(product: Product) {
   return product.images.find((img) => img.type === "main");
 }
