@@ -5,3 +5,5 @@ export interface Product {
   image: string;
   description: string;
 }
+
+export type View = "garden" | "grid";
