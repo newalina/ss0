@@ -17,12 +17,12 @@ export interface Product {
   id: string;
   name: string;
   subtitle: string;
-  price: number;
-  description: string;
-  design: string[];
-  materials: string[];
-  make: string[];
   images: ProductImage[];
+  price?: number;
+  description?: string;
+  design?: string[];
+  materials?: string[];
+  make?: string[];
 }
 
 export interface CartItem {
