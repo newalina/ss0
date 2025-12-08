@@ -24,3 +24,8 @@ export interface Product {
   make: string[];
   images: ProductImage[];
 }
+
+export interface CartItem {
+  productId: string;
+  quantity: number;
+}
