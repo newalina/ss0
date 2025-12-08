@@ -93,7 +93,7 @@ export const products: Product[] = [
     subtitle: "collection 003 - necklaces",
     images: [
       {
-        src: "/images/e1.png",
+        src: "/images/n1.png",
         alt: "E1 hero",
         type: "main",
       },
