@@ -16,7 +16,7 @@ export default function GardenView() {
         <div
           className="absolute"
           style={{
-            left: "75%",
+            left: "30%",
             top: "60%",
             transform: "translate(-50%, -50%)",
           }}
@@ -24,10 +24,10 @@ export default function GardenView() {
           <Image
             src={ss01Image.src}
             alt={ss01Image.alt}
-            width={400}
-            height={600}
+            width={500}
+            height={500}
             className="object-contain"
-            style={{ maxWidth: "400px", height: "auto" }}
+            style={{ maxWidth: "500px", height: "auto" }}
           />
         </div>
       )}
@@ -36,7 +36,7 @@ export default function GardenView() {
         <div
           className="absolute"
           style={{
-            left: "25%",
+            left: "70%",
             top: "40%",
             transform: "translate(-50%, -50%)",
           }}
@@ -44,10 +44,10 @@ export default function GardenView() {
           <Image
             src={ss02Image.src}
             alt={ss02Image.alt}
-            width={400}
-            height={600}
+            width={500}
+            height={500}
             className="object-contain"
-            style={{ maxWidth: "400px", height: "auto" }}
+            style={{ maxWidth: "500px", height: "auto" }}
           />
         </div>
       )}
