@@ -60,7 +60,6 @@ export default function ProductImage({
               transform: "translate(-50%, -50%)",
             }}
           >
-            {/* Invisible hoverable area - border box area only */}
             <div
               className="cursor-pointer"
               style={{
@@ -70,7 +69,6 @@ export default function ProductImage({
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              {/* Blue border box */}
               <div
                 className={`absolute inset-0 border-2 border-[#1E00FF] ${
                   isHovering ? "opacity-100" : "opacity-0"
@@ -92,7 +90,6 @@ export default function ProductImage({
           </div>
         )}
 
-        {/* Product name - positioned relative to image container */}
         {namePosition && product.name && (
           <div
             className={`absolute text-[#1E00FF] ${
@@ -105,7 +102,7 @@ export default function ProductImage({
               pointerEvents: "none",
             }}
           >
-            <p className="text-lg font-medium whitespace-nowrap">
+            <p className="text-2xl font-medium italic whitespace-nowrap">
               {product.name}
             </p>
           </div>

@@ -24,7 +24,7 @@ export default function GardenView() {
             width: "230px",
             height: "230px",
           }}
-          namePosition={{ left: "49%", top: "90%" }}
+          namePosition={{ left: "49%", top: "101%" }}
         />
       )}
 
@@ -39,7 +39,7 @@ export default function GardenView() {
             width: "230px",
             height: "230px",
           }}
-          namePosition={{ left: "49%", top: "90%" }}
+          namePosition={{ left: "49%", top: "101%" }}
         />
       )}
 
@@ -54,7 +54,7 @@ export default function GardenView() {
             width: "180px",
             height: "70px",
           }}
-          namePosition={{ left: "50%", top: "50%" }}
+          namePosition={{ left: "95%", top: "11%" }}
           subtitlePosition="top"
         />
       )}
@@ -70,7 +70,7 @@ export default function GardenView() {
             width: "160px",
             height: "160px",
           }}
-          namePosition={{ left: "52%", top: "55%" }}
+          namePosition={{ left: "92%", top: "65%" }}
         />
       )}
 
@@ -85,7 +85,7 @@ export default function GardenView() {
             width: "170px",
             height: "170px",
           }}
-          namePosition={{ left: "32%", top: "20%" }}
+          namePosition={{ left: "32%", top: "101%" }}
         />
       )}
 
@@ -100,7 +100,7 @@ export default function GardenView() {
             width: "180px",
             height: "100px",
           }}
-          namePosition={{ left: "50%", top: "75%" }}
+          namePosition={{ left: "7%", top: "60%" }}
         />
       )}
     </div>
