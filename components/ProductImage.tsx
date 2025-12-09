@@ -15,10 +15,8 @@ interface ProductImageProps {
     width: string;
     height: string;
   };
-  textPosition: {
-    subtitleInside?: boolean;
-    nameBelow?: boolean;
-  };
+  namePosition?: { left: string; top: string };
+  subtitlePosition?: "top" | "bottom";
 }
 
 export default function ProductImage({
@@ -26,9 +24,10 @@ export default function ProductImage({
   position,
   imageSize,
   border,
-  textPosition,
+  namePosition,
+  subtitlePosition = "bottom",
 }: ProductImageProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const image = getMainImage(product);
 
   if (!image) return null;
@@ -68,43 +67,47 @@ export default function ProductImage({
                 width: border.width,
                 height: border.height,
               }}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
             >
               {/* Blue border box */}
               <div
                 className={`absolute inset-0 border-2 border-[#1E00FF] ${
-                  isHovered ? "opacity-100" : "opacity-0"
+                  isHovering ? "opacity-100" : "opacity-0"
                 }`}
               >
-                {textPosition?.subtitleInside && product.subtitle && (
-                  <div className="absolute bottom-1 left-0 right-0 px-2 bg-transparent">
-                    <p className="text-[#1E00FF] text-xs leading-tight">
+                {product.subtitle && (
+                  <div
+                    className={`absolute left-0 right-0 px-2 bg-transparent ${
+                      subtitlePosition === "top" ? "top-1" : "bottom-1"
+                    }`}
+                  >
+                    <p className="text-[#1E00FF] text-xs text-right">
                       {product.subtitle}
                     </p>
                   </div>
                 )}
               </div>
             </div>
+          </div>
+        )}
 
-            {/* Product name below the box */}
-            {textPosition?.nameBelow && product.name && (
-              <div
-                className={`absolute text-[#1E00FF] ${
-                  isHovered ? "opacity-100" : "opacity-0"
-                }`}
-                style={{
-                  left: "50%",
-                  top: `calc(${border.height} / 2 + 12px)`,
-                  transform: "translateX(-50%)",
-                  pointerEvents: "none",
-                }}
-              >
-                <p className="text-lg font-medium whitespace-nowrap">
-                  {product.name}
-                </p>
-              </div>
-            )}
+        {/* Product name - positioned relative to image container */}
+        {namePosition && product.name && (
+          <div
+            className={`absolute text-[#1E00FF] ${
+              isHovering ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              left: namePosition.left,
+              top: namePosition.top,
+              transform: "translate(-50%, -50%)",
+              pointerEvents: "none",
+            }}
+          >
+            <p className="text-lg font-medium whitespace-nowrap">
+              {product.name}
+            </p>
           </div>
         )}
       </div>
