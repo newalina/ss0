@@ -18,6 +18,13 @@ export default function GardenView() {
           product={ss01}
           position={{ left: "30%", top: "60%" }}
           imageSize={{ width: 500, height: 500, maxWidth: "500px" }}
+          border={{
+            left: "49%",
+            top: "74%",
+            width: "230px",
+            height: "230px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
 
@@ -26,6 +33,13 @@ export default function GardenView() {
           product={ss02}
           position={{ left: "70%", top: "40%" }}
           imageSize={{ width: 500, height: 500, maxWidth: "500px" }}
+          border={{
+            left: "50%",
+            top: "75%",
+            width: "180px",
+            height: "120px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
 
@@ -34,6 +48,13 @@ export default function GardenView() {
           product={e1}
           position={{ left: "45%", top: "35%" }}
           imageSize={{ width: 250, height: 250, maxWidth: "250px" }}
+          border={{
+            left: "50%",
+            top: "50%",
+            width: "200px",
+            height: "100px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
 
@@ -42,6 +63,13 @@ export default function GardenView() {
           product={n1}
           position={{ left: "52%", top: "78%" }}
           imageSize={{ width: 450, height: 450, maxWidth: "400px" }}
+          border={{
+            left: "50%",
+            top: "60%",
+            width: "220px",
+            height: "140px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
 
@@ -50,6 +78,13 @@ export default function GardenView() {
           product={r1}
           position={{ left: "20%", top: "30%" }}
           imageSize={{ width: 400, height: 400, maxWidth: "400px" }}
+          border={{
+            left: "30%",
+            top: "20%",
+            width: "200px",
+            height: "150px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
 
@@ -58,6 +93,13 @@ export default function GardenView() {
           product={w1}
           position={{ left: "85%", top: "70%" }}
           imageSize={{ width: 400, height: 400, maxWidth: "400px" }}
+          border={{
+            left: "70%",
+            top: "80%",
+            width: "180px",
+            height: "100px",
+          }}
+          textPosition={{ subtitleInside: true, nameBelow: true }}
         />
       )}
     </div>
