@@ -19,13 +19,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       namePosition: { left: "49%", top: "101%" },
     },
     grid: {
-      position: { left: "22%", top: "30%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% - 590px)", top: "30%" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
     },
@@ -43,13 +43,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       namePosition: { left: "49%", top: "101%" },
     },
     grid: {
-      position: { left: "40%", top: "30%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% - 290px)", top: "30%" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
     },
@@ -68,13 +68,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       subtitlePosition: "top",
     },
     grid: {
-      position: { left: "58%", top: "30%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% + 10px)", top: "30%" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
       subtitlePosition: "bottom",
@@ -93,13 +93,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       namePosition: { left: "92%", top: "65%" },
     },
     grid: {
-      position: { left: "76%", top: "30%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% + 310px)", top: "30%" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
     },
@@ -117,13 +117,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       namePosition: { left: "32%", top: "101%" },
     },
     grid: {
-      position: { left: "30%", top: "68%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% - 590px)", top: "calc(30% + 300px)" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
     },
@@ -141,13 +141,13 @@ export const productLayouts: Record<string, ProductLayout> = {
       namePosition: { left: "7%", top: "60%" },
     },
     grid: {
-      position: { left: "62%", top: "68%" },
-      imageSize: { width: 360, height: 360, maxWidth: "360px" },
+      position: { left: "calc(50% - 290px)", top: "calc(30% + 300px)" },
+      imageSize: { width: 280, height: 280, maxWidth: "280px" },
       border: {
-        left: "50%",
+        left: "0%",
         top: "50%",
-        width: "260px",
-        height: "260px",
+        width: "280px",
+        height: "280px",
       },
       namePosition: { left: "50%", top: "104%" },
     },
@@ -157,4 +157,3 @@ export const productLayouts: Record<string, ProductLayout> = {
 export function getProductLayout(productId: string): ProductLayout | undefined {
   return productLayouts[productId];
 }
-

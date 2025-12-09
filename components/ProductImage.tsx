@@ -42,7 +42,10 @@ export default function ProductImage({
         left: position.left,
         top: position.top,
       }}
-      style={{ transform: "translate(-50%, -50%)" }}
+      style={{
+        transform:
+          view === "grid" ? "translateY(-50%)" : "translate(-50%, -50%)",
+      }}
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
     >
       <motion.div
@@ -50,17 +53,22 @@ export default function ProductImage({
         initial={false}
         animate={{
           width: imageSize.width,
+          height: imageSize.height,
           maxWidth: imageSize.maxWidth,
         }}
         transition={{ type: "spring", stiffness: 120, damping: 18 }}
+        style={{ overflow: "hidden" }}
       >
         <Image
           src={image.src}
           alt={image.alt}
           width={imageSize.width}
           height={imageSize.height}
-          className="object-contain"
-          style={{ width: "100%", height: "auto" }}
+          className={view === "grid" ? "object-cover" : "object-contain"}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
         />
 
         {border && (
@@ -69,7 +77,8 @@ export default function ProductImage({
             style={{
               left: border.left,
               top: border.top,
-              transform: "translate(-50%, -50%)",
+              transform:
+                view === "grid" ? "translateY(-50%)" : "translate(-50%, -50%)",
               width: border.width,
               height: border.height,
             }}
@@ -79,6 +88,13 @@ export default function ProductImage({
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
+              {view === "grid" && (
+                <motion.div
+                  className="absolute inset-0 border-2 border-white"
+                  animate={{ opacity: isHovering ? 0 : 1 }}
+                  transition={{ duration: 0.25 }}
+                />
+              )}
               <motion.div
                 className="absolute inset-0 border-2 border-[#1E00FF]"
                 animate={{ opacity: isHovering ? 1 : 0 }}
