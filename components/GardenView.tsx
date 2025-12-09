@@ -94,8 +94,8 @@ export default function GardenView() {
           position={{ left: "85%", top: "70%" }}
           imageSize={{ width: 400, height: 400, maxWidth: "400px" }}
           border={{
-            left: "70%",
-            top: "80%",
+            left: "50%",
+            top: "60%",
             width: "180px",
             height: "100px",
           }}
