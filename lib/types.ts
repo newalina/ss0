@@ -29,3 +29,16 @@ export interface CartItem {
   productId: string;
   quantity: number;
 }
+
+export interface LayoutConfig {
+  position: { left: string; top: string };
+  imageSize: { width: number; height: number; maxWidth: string };
+  border: {
+    left: string;
+    top: string;
+    width: string;
+    height: string;
+  };
+  namePosition?: { left: string; top: string };
+  subtitlePosition?: "top" | "bottom";
+}

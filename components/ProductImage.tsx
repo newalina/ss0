@@ -2,44 +2,47 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { getMainImage } from "@/lib/data";
-import { Product } from "@/lib/types";
-
+import { getMainImage } from "@/lib/products";
+import { Product, View, LayoutConfig } from "@/lib/types";
+import { motion } from "framer-motion";
 interface ProductImageProps {
   product: Product;
-  position: { left: string; top: string };
-  imageSize: { width: number; height: number; maxWidth: string };
-  border: {
-    left: string;
-    top: string;
-    width: string;
-    height: string;
-  };
-  namePosition?: { left: string; top: string };
-  subtitlePosition?: "top" | "bottom";
+  view: View;
+  garden: LayoutConfig;
+  grid: LayoutConfig;
 }
 
 export default function ProductImage({
   product,
-  position,
-  imageSize,
-  border,
-  namePosition,
-  subtitlePosition = "bottom",
+  view,
+  garden,
+  grid,
 }: ProductImageProps) {
   const [isHovering, setIsHovering] = useState(false);
+
   const image = getMainImage(product);
 
   if (!image) return null;
 
+  const current = view === "garden" ? garden : grid;
+  const {
+    position,
+    imageSize,
+    border,
+    namePosition,
+    subtitlePosition = "bottom",
+  } = current;
+
   return (
-    <div
+    <motion.div
       className="absolute"
-      style={{
+      initial={false}
+      animate={{
         left: position.left,
         top: position.top,
-        transform: "translate(-50%, -50%)",
       }}
+      style={{ transform: "translate(-50%, -50%)" }}
+      transition={{ type: "spring", stiffness: 120, damping: 18 }}
     >
       <div className="relative">
         <Image
@@ -52,27 +55,25 @@ export default function ProductImage({
         />
 
         {border && (
-          <div
+          <motion.div
             className="absolute"
             style={{
               left: border.left,
               top: border.top,
               transform: "translate(-50%, -50%)",
+              width: border.width,
+              height: border.height,
             }}
           >
             <div
-              className="cursor-pointer"
-              style={{
-                width: border.width,
-                height: border.height,
-              }}
+              className="relative h-full w-full cursor-pointer"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
-              <div
-                className={`absolute inset-0 border-2 border-[#1E00FF] ${
-                  isHovering ? "opacity-100" : "opacity-0"
-                }`}
+              <motion.div
+                className="absolute inset-0 border-2 border-[#1E00FF]"
+                animate={{ opacity: isHovering ? 1 : 0 }}
+                transition={{ duration: 0.25 }}
               >
                 {product.subtitle && (
                   <div
@@ -85,29 +86,29 @@ export default function ProductImage({
                     </p>
                   </div>
                 )}
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {namePosition && product.name && (
-          <div
-            className={`absolute text-[#1E00FF] ${
-              isHovering ? "opacity-100" : "opacity-0"
-            }`}
+          <motion.div
+            className="absolute text-[#1E00FF]"
             style={{
               left: namePosition.left,
               top: namePosition.top,
               transform: "translate(-50%, -50%)",
               pointerEvents: "none",
             }}
+            animate={{ opacity: isHovering ? 1 : 0 }}
+            transition={{ duration: 0.25 }}
           >
             <p className="text-2xl font-medium italic whitespace-nowrap">
               {product.name}
             </p>
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
