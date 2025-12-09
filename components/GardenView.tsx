@@ -79,10 +79,10 @@ export default function GardenView() {
           position={{ left: "20%", top: "30%" }}
           imageSize={{ width: 400, height: 400, maxWidth: "400px" }}
           border={{
-            left: "30%",
-            top: "20%",
-            width: "200px",
-            height: "150px",
+            left: "32%",
+            top: "75%",
+            width: "170px",
+            height: "170px",
           }}
           textPosition={{ subtitleInside: true, nameBelow: true }}
         />
