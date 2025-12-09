@@ -5,6 +5,7 @@ import Image from "next/image";
 import { getMainImage } from "@/lib/products";
 import { Product, View, LayoutConfig } from "@/lib/types";
 import { motion } from "framer-motion";
+
 interface ProductImageProps {
   product: Product;
   view: View;
@@ -46,6 +47,7 @@ export default function ProductImage({
     >
       <motion.div
         className="relative"
+        initial={false}
         animate={{
           width: imageSize.width,
           maxWidth: imageSize.maxWidth,
