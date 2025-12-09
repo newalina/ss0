@@ -44,14 +44,21 @@ export default function ProductImage({
       style={{ transform: "translate(-50%, -50%)" }}
       transition={{ type: "spring", stiffness: 120, damping: 18 }}
     >
-      <div className="relative">
+      <motion.div
+        className="relative"
+        animate={{
+          width: imageSize.width,
+          maxWidth: imageSize.maxWidth,
+        }}
+        transition={{ type: "spring", stiffness: 120, damping: 18 }}
+      >
         <Image
           src={image.src}
           alt={image.alt}
           width={imageSize.width}
           height={imageSize.height}
           className="object-contain"
-          style={{ maxWidth: imageSize.maxWidth, height: "auto" }}
+          style={{ width: "100%", height: "auto" }}
         />
 
         {border && (
@@ -108,7 +115,7 @@ export default function ProductImage({
             </p>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
