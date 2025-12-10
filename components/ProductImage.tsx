@@ -46,7 +46,7 @@ export default function ProductImage({
         transform:
           view === "grid" ? "translateY(-50%)" : "translate(-50%, -50%)",
       }}
-      transition={{ type: "spring", stiffness: 120, damping: 18 }}
+      transition={{ type: "spring", stiffness: 150, damping: 30 }}
     >
       <motion.div
         className="relative"
@@ -56,8 +56,7 @@ export default function ProductImage({
           height: imageSize.height,
           maxWidth: imageSize.maxWidth,
         }}
-        transition={{ type: "spring", stiffness: 120, damping: 18 }}
-        style={{ overflow: "hidden" }}
+        transition={{ type: "spring", stiffness: 150, damping: 30 }}
       >
         <Image
           src={image.src}
@@ -116,7 +115,7 @@ export default function ProductImage({
           </motion.div>
         )}
 
-        {namePosition && product.name && (
+        {view === "garden" && namePosition && product.name && (
           <motion.div
             className="absolute text-[#1E00FF]"
             style={{

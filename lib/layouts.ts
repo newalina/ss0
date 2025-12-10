@@ -83,7 +83,7 @@ export const productLayouts: Record<string, ProductLayout> = {
   n1: {
     garden: {
       position: { left: "52%", top: "78%" },
-      imageSize: { width: 450, height: 450, maxWidth: "400px" },
+      imageSize: { width: 400, height: 400, maxWidth: "400px" },
       border: {
         left: "52%",
         top: "40%",
