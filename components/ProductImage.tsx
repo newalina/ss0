@@ -22,7 +22,6 @@ export default function ProductImage({
   const [isHovering, setIsHovering] = useState(false);
 
   const image = getMainImage(product);
-
   if (!image) return null;
 
   const current = view === "garden" ? garden : grid;
@@ -118,6 +117,7 @@ export default function ProductImage({
         {view === "garden" && namePosition && product.name && (
           <motion.div
             className="absolute text-[#1E00FF]"
+            initial={false}
             style={{
               left: namePosition.left,
               top: namePosition.top,
